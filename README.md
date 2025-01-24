@@ -108,3 +108,9 @@ III) Разрешим в SELinux работу nginx на порту TCP 4881 c �
 
 Audit2allow сформировал модуль, и сообщил нам команду, с помощью которой можно применить данный модуль: `semodule -i nginx.pp`
 
+Попробуем снова запустить nginx: `systemctl start nginx`
+
+`systemctl status nginx`
+
+![Image alt](https://github.com/NikPuskov/SELinux/blob/main/selinux6.jpg)
+
