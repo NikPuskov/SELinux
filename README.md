@@ -32,3 +32,4 @@ README с описанием каждого решения (скриншоты �
 
 ![Image alt](https://github.com/NikPuskov/SELinux/blob/main/selinux0.jpg)
 
+![Image alt](https://github.com/NikPuskov/SELinux/blob/main/selinux1.jpg)
