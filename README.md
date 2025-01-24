@@ -86,3 +86,15 @@ II) Разрешим в SELinux работу nginx на порту TCP 4881 c п
 
 ![Image alt](https://github.com/NikPuskov/SELinux/blob/main/selinux4.jpg)
 
+Заходим в любой браузер на хосте и переходим по адресу `http://127.0.0.1:4881` либо со стенда `curl localhost:4481`
+
+Удалить нестандартный порт из имеющегося типа можно с помощью команды: `semanage port -d -t http_port_t -p tcp 4881`
+
+`semanage port -l | grep  http_port_t`
+
+`systemctl restart nginx`
+
+`systemctl status nginx`
+
+![Image alt](https://github.com/NikPuskov/SELinux/blob/main/selinux5.jpg)
+
