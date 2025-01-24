@@ -30,5 +30,5 @@ README с описанием каждого решения (скриншоты �
 
 Разворачиваем предложенный стенд на Vagrant (https://github.com/Nickmob/vagrant_selinux) с доработками
 
-![Image alt](https://github.com/NikPuskov/SELinux0/blob/main/selinux0.jpg)
+![Image alt](https://github.com/NikPuskov/SELinux/blob/main/selinux0.jpg)
 
