@@ -56,3 +56,15 @@ I) Разрешим в SELinux работу nginx на порту TCP 4881 c п�
 
 ![Image alt](https://github.com/NikPuskov/SELinux/blob/main/selinux2.jpg)
 
+Утилита audit2why покажет почему трафик блокируется. Исходя из вывода утилиты, мы видим, что нам нужно поменять параметр nis_enabled.
+
+Включим параметр nis_enabled и перезапустим nginx
+
+`setsebool -P nis_enabled on`
+
+`systemctl restart nginx`
+
+`systemctl status nginx`
+
+![Image alt](https://github.com/NikPuskov/SELinux/blob/main/selinux3.jpg)
+
