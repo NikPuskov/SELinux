@@ -98,3 +98,13 @@ II) Разрешим в SELinux работу nginx на порту TCP 4881 c п
 
 ![Image alt](https://github.com/NikPuskov/SELinux/blob/main/selinux5.jpg)
 
+III) Разрешим в SELinux работу nginx на порту TCP 4881 c помощью формирования и установки модуля SELinux
+
+Попробуем снова запустить Nginx: `systemctl start nginx`
+
+Посмотрим логи SELinux, которые относятся к Nginx: `grep nginx /var/log/audit/audit.log`
+
+Воспользуемся утилитой audit2allow для того, чтобы на основе логов SELinux сделать модуль, разрешающий работу nginx на нестандартном порту: `grep nginx /var/log/audit/audit.log | audit2allow -M nginx`
+
+Audit2allow сформировал модуль, и сообщил нам команду, с помощью которой можно применить данный модуль: `semodule -i nginx.pp`
+
