@@ -124,7 +124,7 @@ Audit2allow сформировал модуль, и сообщил нам ком
 
 2. Для того, чтобы развернуть стенд потребуется хост, с установленным git и ansible
 
-Работа выполнена на хостовой виртуальной машине с Ubuntu 24.04 с установленным Vagrant, VirtualBox
+Работа выполнена на хостовой виртуальной машине с Ubuntu 24.04 с установленным Vagrant, Ansible, VirtualBox, Git
 
 Выполним клонирование репозитория: `git clone https://github.com/Nickmob/vagrant_selinux_dns_problems.git`
 
@@ -135,4 +135,12 @@ Audit2allow сформировал модуль, и сообщил нам ком
 Развернём 2 ВМ с помощью vagrant: `vagrant up`
 
 После того, как стенд развернется, проверим ВМ с помощью команды: `vagrant status`
+
+Подключимся к клиенту: `vagrant ssh client`
+
+Попробуем внести изменения в зону: `nsupdate -k /etc/named.zonetransfer.key`
+
+![Image alt](https://github.com/NikPuskov/SELinux/blob/main/selinux7.jpg)
+
+Изменения внести не получилось. Давайте посмотрим логи SELinux, чтобы понять в чём может быть проблема.
 
