@@ -165,3 +165,10 @@ Audit2allow сформировал модуль, и сообщил нам ком
 ![Image alt](https://github.com/NikPuskov/SELinux/blob/main/selinux9.jpg)
 
 Тут мы также видим, что контекст безопасности неправильный. Проблема заключается в том, что конфигурационные файлы лежат в другом каталоге. Посмотреть в каком каталоги должны лежать, файлы, чтобы на них распространялись правильные политики SELinux можно с помощью команды: `sudo semanage fcontext -l | grep named`
+
+Изменим тип контекста безопасности для каталога /etc/named: `sudo chcon -R -t named_zone_t /etc/named`
+
+`ls -laZ /etc/named`
+
+![Image alt](https://github.com/NikPuskov/SELinux/blob/main/selinux10.jpg)
+
