@@ -144,3 +144,15 @@ Audit2allow сформировал модуль, и сообщил нам ком
 
 Изменения внести не получилось. Давайте посмотрим логи SELinux, чтобы понять в чём может быть проблема.
 
+Для этого воспользуемся утилитой audit2why: `sudo -i` `cat /var/log/audit/audit.log | audit2why`
+
+Тут мы видим, что на клиенте отсутствуют ошибки. 
+
+Не закрывая сессию на клиенте, подключимся к серверу ns01 и проверим логи SELinux: `vagrant ssh ns01`
+
+`sudo -i` `cat /var/log/audit/audit.log | audit2why`
+
+В логах мы видим, что ошибка в контексте безопасности. Целевой контекст `named_conf_t`.
+
+![Image alt](https://github.com/NikPuskov/SELinux/blob/main/selinux8.jpg)
+
