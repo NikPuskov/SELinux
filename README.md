@@ -172,3 +172,21 @@ Audit2allow сформировал модуль, и сообщил нам ком
 
 ![Image alt](https://github.com/NikPuskov/SELinux/blob/main/selinux10.jpg)
 
+Попробуем снова внести изменения с клиента: `nsupdate -k /etc/named.zonetransfer.key`
+
+`> server 192.168.50.10`
+
+`> zone ddns.lab`
+
+`> update add www.ddns.lab. 60 A 192.168.50.15`
+
+`> send`
+
+`> quit`
+
+`dig www.ddns.lab`
+
+Видим, что изменения применились. Попробуем перезагрузить хосты и ещё раз сделать запрос с помощью dig: `dig @192.168.50.10 www.ddns.lab`
+
+![Image alt](https://github.com/NikPuskov/SELinux/blob/main/selinux11.jpg)
+
